@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface seniorprojectViewController : UIViewController
+@interface seniorprojectViewController : UIViewController <UITextFieldDelegate>
 {
+    __weak IBOutlet UITextField *titleField;
+    __weak IBOutlet UITextView *textField;
     
 }
 
