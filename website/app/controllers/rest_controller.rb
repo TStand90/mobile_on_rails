@@ -2,9 +2,9 @@ class RestController < ApplicationController
   protect_from_forgery except: :receive
   skip_before_filter :verify_authenticity_token
   respond_to :json
+  
   def receive
-    @jsondata = JSON.parse params.to_a[0][0]
-    @post = Post.new(@jsondata)
+    @post = Post.new(JSON.parse(params.keys[0]))
     if @post.save
       respond_to do |format|
         msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
@@ -12,9 +12,13 @@ class RestController < ApplicationController
       end
     else
       respond_to do |format|
-        msg = { :status => "Not ok", :message => "Failed", :html => "<b>...</b>" }
+        msg = { :status => "Error", :message => "Failed", :html => "<b>...</b>" }
         format.json { render :json => msg }
       end
     end
+  end
+  
+  def display
+    @latestfive = Post.last(5)
   end
 end

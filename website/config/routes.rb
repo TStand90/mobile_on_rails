@@ -1,6 +1,7 @@
 Website::Application.routes.draw do
   root 'main_pages#home'
   match '/receive', to: 'rest#receive', via: 'post'
+  match '/display', to: 'rest#display', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
