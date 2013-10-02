@@ -21,4 +21,8 @@ class RestController < ApplicationController
   def display
     @latestfive = Post.last(5)
   end
+  
+  def getlatest
+    
+  end
 end
