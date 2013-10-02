@@ -52,7 +52,7 @@
     [urlRequest setHTTPMethod:@"POST"];
     
     //body = [NSString stringWithFormat:@"{\"posting\": {\"title\": \"%@\", \"author\": \"Test\", \"text\": \"%@\"}}", title, text];
-    body = [NSString stringWithFormat:@"{\"title\": \"%@\", \"author\": \"Test\", \"text\": \"%@\"}", title, text];
+    body = [NSString stringWithFormat:@"{\"post\": {\"title\": \"%@\", \"author\": \"Test\", \"text\": \"%@\"}}", title, text];
     //body = [NSString stringWithFormat:@"{title: %@, author: Test, text: %@}", title, text];
     //body = [NSString stringWithFormat:@"post: {title: %@, author: Test, text: %@}", title, text];
     NSLog(body);
