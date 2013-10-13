@@ -50,12 +50,7 @@ class RestController < ApplicationController
     @latestfive = Post.last(5)
   end
   
-<<<<<<< HEAD
-  def get_latest
-   
-=======
-  def getlatest
+  def get_latest(count)
     
->>>>>>> 87f5529fe9cd96d00650da4c5c349de62201f22f
   end
 end
