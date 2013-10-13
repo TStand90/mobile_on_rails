@@ -1,0 +1,6 @@
+<% @latestfive.each do |entry| %>
+  <h2><%= entry.title %></h2>
+  <h3>Author: <%= entry.author %></p>
+  <p><%= entry.text %></p>
+  <p>Submitted: <%= entry.created_at %></p>
+<% end %>
