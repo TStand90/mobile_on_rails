@@ -4,7 +4,7 @@ class RestController < ApplicationController
   respond_to :json
   
   def receive
-    @post = Post.new(JSON.parse(params.keys[0]))
+    @post = Post.new(JSON.parse(params.keys(0)))
     if @post.save
       respond_to do |format|
         msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
