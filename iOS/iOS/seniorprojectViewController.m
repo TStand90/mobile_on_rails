@@ -28,8 +28,6 @@
 }
 - (IBAction)submitButtonPressed:(id)sender
 {
-    NSLog(@"Submit Button Pressed!");
-    
     NSMutableDictionary *ts = [[NSMutableDictionary alloc] init];
     NSMutableArray* jsonArray = [NSMutableArray arrayWithObject:ts];
     [jsonArray addObject:ts];
