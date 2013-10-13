@@ -48,7 +48,7 @@
     
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] init];
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [urlRequest setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://107.210.9.246:3000/receive"]]];
+    [urlRequest setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.241.213.204:3000/receive"]]];
     [urlRequest setHTTPMethod:@"POST"];
     
     //body = [NSString stringWithFormat:@"{\"posting\": {\"title\": \"%@\", \"author\": \"Test\", \"text\": \"%@\"}}", title, text];
