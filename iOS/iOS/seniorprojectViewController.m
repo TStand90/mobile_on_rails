@@ -28,17 +28,14 @@
 }
 - (IBAction)submitButtonPressed:(id)sender
 {
-    NSMutableDictionary *ts = [[NSMutableDictionary alloc] init];
-    NSMutableArray* jsonArray = [NSMutableArray arrayWithObject:ts];
-    [jsonArray addObject:ts];
-    
     NSString *author = @"Test Author";
     NSString *topics = @"Test Topic";
     NSString *title = [titleField text];
     NSString *text = [textField text];
     
-    // BEGIN NETWORKING CODE
     NSArray *values = @[author, topics, title, text];
+    
+    // BEGIN NETWORKING CODE
 
     NSString *body;
     
@@ -76,6 +73,48 @@
 {
     NSLog(@"Draft Button Pressed!");    
 }
+/*
+- (IBAction)showLatestButtonPressed:(id)sender {
+    NSLog(@"Show Latest Button Pressed!");
+    
+    NSString *count = @"3";
+    NSString *author = @"Test Author";
+    NSString *topics = @"Test Topic";
+    
+    NSArray *values = @[count, author, topics];
+    
+    // BEGIN NETWORKING CODE
+    
+    NSString *body;
+    
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] init];
+    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [urlRequest setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.241.213.204:3000/receive"]]];
+    [urlRequest setHTTPMethod:@"POST"];
+    
+    body = [self createJSONForRequest:2 withValues:values];
+    [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [NSURLConnection
+     sendAsynchronousRequest:urlRequest queue:queue completionHandler:^(NSURLResponse *response,
+                                                                        NSData *data,
+                                                                        NSError *error) {
+         if ([data length] > 0 && error == nil) {
+             NSString *html = [[NSString alloc] initWithData:data
+                                                    encoding:NSUTF8StringEncoding];
+             NSLog(@"Html = %@", html);
+         }
+         else if ([data length] == 0 && error == nil) {
+             NSLog(@"Nothing was downloaded.");
+         }
+         else if (error != nil) {
+             NSLog(@"Error happened = %@", error);
+         }
+     }];
+    // END NETWORKING CODE
+}*/ 
 
 -(IBAction)done:(UIStoryboardSegue *)seque{
     [self.navigationController popViewControllerAnimated:YES];

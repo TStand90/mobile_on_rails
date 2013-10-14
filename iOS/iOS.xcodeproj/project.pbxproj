@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F9958D8180B724A004AEC74 /* latestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9958D7180B724A004AEC74 /* latestViewController.m */; };
 		2FADD54017E6973B001F2FDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FADD53F17E6973B001F2FDB /* UIKit.framework */; };
 		2FADD54217E6973B001F2FDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FADD54117E6973B001F2FDB /* Foundation.framework */; };
 		2FADD54417E6973B001F2FDB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FADD54317E6973B001F2FDB /* CoreGraphics.framework */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F9958D6180B724A004AEC74 /* latestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = latestViewController.h; sourceTree = "<group>"; };
+		2F9958D7180B724A004AEC74 /* latestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = latestViewController.m; sourceTree = "<group>"; };
 		2FADD53C17E6973B001F2FDB /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FADD53F17E6973B001F2FDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2FADD54117E6973B001F2FDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +95,8 @@
 				2FADD55D17E6973B001F2FDB /* seniorprojectViewController.h */,
 				2FADD55E17E6973B001F2FDB /* seniorprojectViewController.m */,
 				2FADD54617E6973B001F2FDB /* Supporting Files */,
+				2F9958D6180B724A004AEC74 /* latestViewController.h */,
+				2F9958D7180B724A004AEC74 /* latestViewController.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				2FADD54C17E6973B001F2FDB /* main.m in Sources */,
 				2FADD55017E6973B001F2FDB /* seniorprojectAppDelegate.m in Sources */,
 				2FADD55F17E6973B001F2FDB /* seniorprojectViewController.m in Sources */,
+				2F9958D8180B724A004AEC74 /* latestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +319,7 @@
 				2FADD56417E6973B001F2FDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

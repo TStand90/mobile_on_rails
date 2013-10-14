@@ -12,11 +12,15 @@
 {
     __weak IBOutlet UITextField *titleField;
     __weak IBOutlet UITextView *textField;
+    __weak IBOutlet UITableView *latestTable;
     
 }
 
 - (IBAction)submitButtonPressed:(id)sender;
 - (IBAction)draftButtonPressed:(id)sender;
--(IBAction)done:(UIStoryboardSegue *)seque;
-
+- (IBAction)done:(UIStoryboardSegue *)seque;
+- (IBAction)showLatestButtonPressed:(id)sender;
+- (NSString*)createJSONForRequest:(int)requestType withValues:(NSArray *)values;
+- (NSString *)latestPostsJSONBuilder:(NSArray *)values;
+- (NSString *)newPostJSONBuilder:(NSArray *)values;
 @end
