@@ -5,14 +5,13 @@ class RestController < ApplicationController
   
   def receive
     @json_data = JSON.parse(JSON.parse(params.keys.to_s).first)
-    puts @json_data
     key = @json_data.keys[0]
     data = @json_data.values[0]
     case key
     when "newpost"
       save_post(data)
     when "latest"
-      get_latest(data)
+      get_latest(data["count"].to_i)
     when "edit"
       edit_post(data)
     when "delete"
@@ -38,19 +37,18 @@ class RestController < ApplicationController
   end
   
   def edit_post(post)
-    #@post = Post.find(post)
-    puts "Edit function called"
+    @edit_post = Post.find_by(id: post['id'])
+    @edit_post.update(title: post['title'], topics: post['topics'], text: post['text'])
   end
   
   def delete_post(post)
-    puts "Delete function called"
-  end
-  
-  def display
-    @latestfive = Post.last(5)
+    @delete_post = Post.find_by(id: post['id'])
+    @delete_post.destroy
   end
   
   def get_latest(count)
-    
+    @latest = Post.last(count)
+    puts @latest.to_json
+    render json: @latest
   end
 end
